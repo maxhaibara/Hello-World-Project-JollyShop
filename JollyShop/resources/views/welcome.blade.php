@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Jolly Shop
                 </div>
 
                 <div class="links">
