@@ -34,11 +34,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/items">Items</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        <li>
+                            <a class="nav-link" href="/cart">
+                                <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true">Cart</span>
+                            </a>
+                        </li>
                         <!-- Authentication Links -->
                         @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
@@ -50,6 +60,10 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/account">
+                                        {{ Auth::user()->name }} Account Details
+                                    </a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
