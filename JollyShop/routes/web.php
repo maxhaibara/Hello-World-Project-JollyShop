@@ -24,3 +24,9 @@ Route::get('/account/', 'AccountController@show');
 Route::get('/items/add',function() {
 	return view('items.add');
 });
+
+// Route::post('items-add-submit',array(['before'=>'csrf',function() {
+
+// }]);
+
+//Xing Xing wuz here
