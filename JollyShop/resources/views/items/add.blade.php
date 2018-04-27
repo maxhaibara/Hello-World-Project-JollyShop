@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Add Item</div>
                 <div class="card-body">
-                    {{ Form::open(array('url'=>'items/view')) }}
+                    {{ Form::open(array('url'=>'items')) }}
 
                     {{ Form::label('name','Item Name',array('id'=>'','class'=>'')) }}
                     {{ Form::text('name','',array('id'=>'','class'=>'')) }} <br>

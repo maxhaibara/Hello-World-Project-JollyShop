@@ -21,12 +21,9 @@ Route::get('home', 'HomeController@index')->name('home');
 
 Route::get('account/', 'AccountController@show');
 
-Route::get('items',function() {
-	return redirect('items/view');
-});
-Route::get('items/view','ItemController@index');
+Route::get('items','ItemController@index');
 Route::get('items/add', 'ItemController@create');
-Route::post('items/view','ItemController@store');
+Route::post('items','ItemController@store');
 
 Route::get('topup', function() {
 	return view('welcome');

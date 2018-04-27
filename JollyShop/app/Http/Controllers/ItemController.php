@@ -11,7 +11,7 @@ class ItemController extends Controller
 {
 	public function index() {
 		$items=Item::paginate(5);
-		return view('items.view',compact('items'));
+		return view('items/view',compact('items'));
 	}
     public function create() {
     	if (Auth::check()) {
@@ -34,6 +34,6 @@ class ItemController extends Controller
     	}
 
     	Item::create($request->all());
-    	return redirect('/items/view');
+    	return redirect('/items');
     }
 }
