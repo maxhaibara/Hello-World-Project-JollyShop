@@ -11,29 +11,23 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('/account/', 'AccountController@show');
+Route::get('account/', 'AccountController@show');
 
-Route::get('/items/add',function() {
-	return view('items.add');
+Route::get('items',function() {
+	return redirect('items/view');
 });
+Route::get('items/view','ItemController@index');
+Route::get('items/add', 'ItemController@create');
+Route::post('items/view','ItemController@store');
 
-
-// vincent's
-Route::get('/topup', function() {
+Route::get('topup', function() {
 	return view('welcome');
 });
-
-// Route::post('items-add-submit',array(['before'=>'csrf',function() {
-
-// }]);
-
-//Xing Xing wuz here
-
