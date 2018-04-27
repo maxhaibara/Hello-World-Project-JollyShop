@@ -23,7 +23,9 @@ Route::get('account/', 'AccountController@show');
 
 Route::get('items','ItemController@index');
 Route::get('items/add', 'ItemController@create');
+Route::get('items/{id}','ItemController@show');
 Route::post('items','ItemController@store');
+Route::delete('items/{id}','ItemController@destroy');
 
 Route::get('topup', function() {
 	return view('welcome');

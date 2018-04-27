@@ -13,9 +13,13 @@ class ItemController extends Controller
 		$items=Item::paginate(5);
 		return view('items/view',compact('items'));
 	}
+	public function show($id) {
+		$items=Item::where('id','=',$id)->get();
+		return view('items/view',compact('items'));
+	}
     public function create() {
     	if (Auth::check()) {
-    		return view('items.add');
+    		return view('items/add');
     	}
     	else {
     		return redirect('/');
@@ -26,8 +30,8 @@ class ItemController extends Controller
     	$validator = Validator::make($request->all(), [
             'name'=>'required|max:255',
     		'description'=>'required|max:1023',
-    		'price'=>'required|min:0',
-    		'stock'=>'required|min:0'
+    		'price'=>'required|integer|min:0',
+    		'stock'=>'required|integer|min:0'
         ]);
     	if ($validator->fails()) {
     		return redirect('/items/add')->withErrors($validator)->withInput();
@@ -35,5 +39,11 @@ class ItemController extends Controller
 
     	Item::create($request->all());
     	return redirect('/items');
+    }
+
+    public function destroy($id) {
+    	$item = Item::find($id);
+    	$item->delete();
+    	return redirect('items/');
     }
 }

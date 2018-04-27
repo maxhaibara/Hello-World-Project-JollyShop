@@ -6,32 +6,11 @@
         <div class="col-md-8">
             <div class="card">
                 @foreach ($items as $item)
-                    <div class="card-header">
-                        <div style="font-size:20px; display:inline-block;">
-                            {{ $item->id }} - {{ $item->name }}
-                        </div>
-                        <div style="float:right; text-align:right;display:inline-block;">
-                            Stock : {{ $item-> stock }} left
-                            @guest
-                            @else
-                                    {{ Form::submit('Purchase!') }}
-                            @endguest
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <table class="table">
-                            <tr>
-                                <th>Price</th>
-                                <td>{{ $item->price }} USD</td>
-                            </tr>
-                            <tr>
-                                <th>Description</th>
-                                <td>{{ $item->description }}</td>
-                            </tr>
-                        </table>
-                    </div>
+                    @include('layouts.showitem')
                 @endforeach
-                <div class="card-body">{{ $items->links() }}</div>
+                @if ($items->total()>1)
+                    <div class="card-body">{{ $items->links() }}</div>
+                @endif
                 </div>
             </div>
         </div>
