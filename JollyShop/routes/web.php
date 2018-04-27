@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/account/', 'AccountController@show');
+
+Route::get('/items/add',function() {
+	return view('items.add');
+});
