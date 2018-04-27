@@ -25,8 +25,15 @@ Route::get('/items/add',function() {
 	return view('items.add');
 });
 
+
+// vincent's
+Route::get('/topup', function() {
+	return view('welcome');
+});
+
 // Route::post('items-add-submit',array(['before'=>'csrf',function() {
 
 // }]);
 
 //Xing Xing wuz here
+
