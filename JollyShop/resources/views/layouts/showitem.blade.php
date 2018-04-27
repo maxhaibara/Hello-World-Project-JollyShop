@@ -1,7 +1,7 @@
 <div class="card-header">
-    <div style="font-size:20px; display:inline-block;">
+    <a href="/items/{{ $item->id }}"><div style="font-size:20px; display:inline-block;">
         {{ $item->id }} - {{ $item->name }}
-    </div>
+    </div></a>
     <div style="float:right; text-align:right;display:inline-block;">
         Stock : {{ $item-> stock }} left
         @guest
@@ -22,6 +22,7 @@
         </tr>
     </table>
     <div style="margin-bottom:10px; float:right; text-align:right; display:inline-block">
+
         <a class="btn btn-small btn-info" href="">Edit</a>
 <!--             {{ Form::open(array('action' => array('ItemController@destroy', $item->id))) }}
         {{ Form::submit('Delete', array('id'=>'','class'=>'btn btn-small btn-danger')) }}

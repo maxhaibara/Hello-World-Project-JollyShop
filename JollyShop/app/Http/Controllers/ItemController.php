@@ -14,7 +14,7 @@ class ItemController extends Controller
 		return view('items/view',compact('items'));
 	}
 	public function show($id) {
-		$items=Item::where('id','=',$id)->get();
+		$items=Item::where('id','=',$id)->paginate(5);
 		return view('items/view',compact('items'));
 	}
     public function create() {
