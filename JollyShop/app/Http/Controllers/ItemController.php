@@ -26,8 +26,8 @@ class ItemController extends Controller
     	$validator = Validator::make($request->all(), [
             'name'=>'required|max:255',
     		'description'=>'required|max:1023',
-    		'price'=>'required',
-    		'stock'=>'required'
+    		'price'=>'required|min:0',
+    		'stock'=>'required|min:0'
         ]);
     	if ($validator->fails()) {
     		return redirect('/items/add')->withErrors($validator)->withInput();
