@@ -25,12 +25,9 @@
 							<td>{{ $user->balance }}</td>
 						</tr>
 					</table>
-					<a href="/home">Go Back To Home</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<body>
-</body>
 @endsection
