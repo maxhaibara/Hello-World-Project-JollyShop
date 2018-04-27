@@ -24,3 +24,8 @@ Route::get('/account/', 'AccountController@show');
 Route::get('/items/add',function() {
 	return view('items.add');
 });
+
+// vincent's
+Route::get('/topup', function() {
+	return view('welcome');
+});
