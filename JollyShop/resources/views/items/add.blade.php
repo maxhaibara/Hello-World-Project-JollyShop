@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Add Item</div>
                 <div class="card-body">
-                    {{ Form::open(array('url'=>'items-add-submit')) }}
+                    {{ Form::open(array('url'=>'items')) }}
 
                     {{ Form::label('name','Item Name',array('id'=>'','class'=>'')) }}
                     {{ Form::text('name','',array('id'=>'','class'=>'')) }} <br>
@@ -27,6 +27,15 @@
   
   					{{ Form::close() }}
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
