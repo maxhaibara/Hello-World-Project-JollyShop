@@ -19,7 +19,9 @@ Auth::routes();
 
 Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('account/', 'AccountController@show');
+Route::get('account', 'AccountController@index');
+Route::get('account/balance', 'AccountController@balance');
+Route::post('account', 'AccountController@update');
 
 Route::get('items','ItemController@index');
 Route::get('items/add', 'ItemController@create');

@@ -22,7 +22,10 @@
 						</tr>
 						<tr>
 							<th>Balance</th>
-							<td>{{ $user->balance }}</td>
+							<td>
+								{{ $user->balance }}   
+								<a class="btn btn-small btn-success" href="account/balance" role="button">Top Up</a>
+							</td>
 						</tr>
 					</table>
                 </div>
